@@ -17,7 +17,7 @@ class ImageBanner extends StatelessWidget {
       ),
       child: Image.asset(
           _imagePath,
-        fit: BoxFit.fill,
+        fit: BoxFit.cover,
       ),
     );
   }

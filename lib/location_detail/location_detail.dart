@@ -1,8 +1,8 @@
 import 'package:first_flutter_app/models/location.dart';
 import 'package:flutter/material.dart';
 
-import 'text_section.dart';
-import 'image_banner.dart';
+import 'package:first_flutter_app/widgets/text_section.dart';
+import 'package:first_flutter_app/widgets/image_banner.dart';
 
 class LocationDetail extends StatelessWidget {
 
