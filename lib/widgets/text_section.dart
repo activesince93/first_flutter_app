@@ -15,7 +15,7 @@ class TextSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Container(
-          padding: EdgeInsets.fromLTRB(_hPad, 32.0, _hPad, 4.0),
+          padding: EdgeInsets.fromLTRB(_hPad, 16.0, _hPad, 0.0),
           child: Text(
               _title,
             style: Theme.of(context).textTheme.title,
