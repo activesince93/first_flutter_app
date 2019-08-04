@@ -8,7 +8,7 @@ class LocationTile extends StatelessWidget {
   final Location location;
   final bool darkTheme;
 
-  LocationTile(this.location, this.darkTheme);
+  LocationTile({this.location, this.darkTheme});
 
   @override
   Widget build(BuildContext context) {

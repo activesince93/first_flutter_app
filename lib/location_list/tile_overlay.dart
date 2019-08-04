@@ -16,7 +16,7 @@ class TileOverlay extends StatelessWidget {
         Container(
           padding: EdgeInsets.all(8.0),
           decoration: BoxDecoration(color: Colors.black.withOpacity(0.5)),
-          child: LocationTile(_location, false),
+          child: LocationTile(location: _location, darkTheme: true),
         )
       ],
     );
