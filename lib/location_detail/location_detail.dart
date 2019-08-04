@@ -5,7 +5,6 @@ import 'package:first_flutter_app/widgets/text_section.dart';
 import 'package:first_flutter_app/widgets/image_banner.dart';
 
 class LocationDetail extends StatelessWidget {
-
   final int _locationId;
 
   LocationDetail(this._locationId);
@@ -14,22 +13,24 @@ class LocationDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final location = Location.fetchById(_locationId);
     return Scaffold(
-        appBar: AppBar(
-          title: Text(location.name),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ImageBanner(location.imagePath),
-          ]..addAll(textSections(location))
-        )
+      appBar: AppBar(
+        title: Text(location.name),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ImageBanner(location.imagePath),
+        ]..addAll(textSections(location)),
+      ),
     );
   }
 
   List<Widget> textSections(Location location) {
-    return location.facts.map(
-        (fact) => TextSection(fact.title, fact.text)
-    ).toList();
+    return location.facts
+        .map(
+          (fact) => TextSection(fact.title, fact.text),
+        )
+        .toList();
   }
 }

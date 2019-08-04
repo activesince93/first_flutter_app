@@ -16,25 +16,31 @@ class LocationList extends StatelessWidget {
       ),
       body: ListView.builder(
         itemCount: locations.length,
-        itemBuilder: (context, index) =>
-            _itemBuilder(context, locations[index]),
+        itemBuilder: (context, index) => _itemBuilder(
+              context,
+              locations[index],
+            ),
       ),
     );
   }
 
   _onLocationTap(BuildContext context, int locationId) {
-    Navigator.pushNamed(context, LocationDetailsRoute,
-        arguments: {"id": locationId});
+    Navigator.pushNamed(
+      context,
+      LocationDetailsRoute,
+      arguments: {"id": locationId},
+    );
   }
 
   Widget _itemBuilder(BuildContext context, Location location) {
     return GestureDetector(
-        child: Stack(
-            children: [
-              ImageBanner(location.imagePath),
-              TileOverlay(location)
-            ]
-        ),
-        onTap: () => _onLocationTap(context, location.id));
+      child: Stack(
+        children: [
+          ImageBanner(location.imagePath),
+          TileOverlay(location),
+        ],
+      ),
+      onTap: () => _onLocationTap(context, location.id),
+    );
   }
 }

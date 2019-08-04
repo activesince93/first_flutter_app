@@ -46,12 +46,13 @@ class UnitConverterApp extends StatelessWidget {
 
   _theme() {
     return ThemeData(
-        appBarTheme: AppBarTheme(textTheme: TextTheme(title: AppBarTextStyle)),
-        textTheme: TextTheme(
-          title: TitleTextStyle,
-          body1: Body1TextStyle,
-          subtitle: SubTitleTextStyle,
-          caption: CaptionTextStyle,
-        ));
+      appBarTheme: AppBarTheme(textTheme: TextTheme(title: AppBarTextStyle)),
+      textTheme: TextTheme(
+        title: TitleTextStyle,
+        body1: Body1TextStyle,
+        subtitle: SubTitleTextStyle,
+        caption: CaptionTextStyle,
+      ),
+    );
   }
 }

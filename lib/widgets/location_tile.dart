@@ -18,28 +18,26 @@ class LocationTile extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: DefaultPaddingHorizontal),
       height: LocationTileHeight,
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              location.name.toUpperCase(),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 1,
-              style:
-              Theme.of(context).textTheme.title.copyWith(color: textColor),
-            ),
-            Text(
-              location.userItinerarySummary.toUpperCase(),
-              style: Theme.of(context).textTheme.subtitle,
-            ),
-            Text(
-              location.tourPackageName.toUpperCase(),
-              style: Theme.of(context)
-                  .textTheme
-                  .caption
-                  .copyWith(color: textColor),
-            ),
-          ]),
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            location.name.toUpperCase(),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+            style: Theme.of(context).textTheme.title.copyWith(color: textColor),
+          ),
+          Text(
+            location.userItinerarySummary.toUpperCase(),
+            style: Theme.of(context).textTheme.subtitle,
+          ),
+          Text(
+            location.tourPackageName.toUpperCase(),
+            style:
+                Theme.of(context).textTheme.caption.copyWith(color: textColor),
+          ),
+        ],
+      ),
     );
   }
 }
