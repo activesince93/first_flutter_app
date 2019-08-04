@@ -20,7 +20,7 @@ class LocationDetail extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ImageBanner(location.imagePath),
+          ImageBanner(imagePath: location.imagePath),
         ]..addAll(textSections(location)),
       ),
     );

@@ -34,13 +34,16 @@ class LocationList extends StatelessWidget {
 
   Widget _itemBuilder(BuildContext context, Location location) {
     return GestureDetector(
-      child: Stack(
-        children: [
-          ImageBanner(location.imagePath),
-          TileOverlay(location),
-        ],
-      ),
       onTap: () => _onLocationTap(context, location.id),
+      child: Container(
+        height: 245.0,
+        child: Stack(
+          children: [
+            ImageBanner(imagePath: location.imagePath, height: 245.0),
+            TileOverlay(location),
+          ],
+        ),
+      ),
     );
   }
 }
