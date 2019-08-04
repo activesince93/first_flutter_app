@@ -1,4 +1,5 @@
 import 'package:first_flutter_app/models/location.dart';
+import 'package:first_flutter_app/widgets/location_tile.dart';
 import 'package:flutter/material.dart';
 
 import 'package:first_flutter_app/widgets/text_section.dart';
@@ -21,6 +22,13 @@ class LocationDetail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ImageBanner(imagePath: location.imagePath),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+          ),
+          LocationTile(
+            location: location,
+            darkTheme: false,
+          )
         ]..addAll(textSections(location)),
       ),
     );
