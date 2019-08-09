@@ -4,7 +4,7 @@
 
 // You can read about packages here: https://flutter.io/using-packages/
 import 'package:first_flutter_app/location_detail/location_detail.dart';
-import 'package:first_flutter_app/style.dart';
+import 'package:first_flutter_app/styles/style.dart';
 import 'package:flutter/material.dart';
 
 import 'location_list/location_list.dart';
