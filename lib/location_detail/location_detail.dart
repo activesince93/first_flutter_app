@@ -5,14 +5,31 @@ import 'package:flutter/material.dart';
 import 'package:first_flutter_app/widgets/text_section.dart';
 import 'package:first_flutter_app/widgets/image_banner.dart';
 
-class LocationDetail extends StatelessWidget {
-  final int _locationId;
+class LocationDetail extends StatefulWidget {
+  final int locationId = 0;
 
-  LocationDetail(this._locationId);
+  LocationDetail(locationId);
+
+  @override
+  State<StatefulWidget> createState() {
+    return _LocationDetailState(locationId);
+  }
+}
+
+class _LocationDetailState extends State<LocationDetail> {
+  final int _locationId;
+  Location location = Location.blank();
+
+  _LocationDetailState(this._locationId);
+
+  @override
+  void initState() {
+    super.initState();
+    getLocationDetails(_locationId);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final location = Location.fetchById(_locationId);
     return Scaffold(
       appBar: AppBar(
         title: Text(location.name),
@@ -22,7 +39,7 @@ class LocationDetail extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ImageBanner(imagePath: location.imagePath),
+            ImageBanner(imagePath: location.url),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 16.0, 0.0, 0.0),
             ),
@@ -42,5 +59,14 @@ class LocationDetail extends StatelessWidget {
           (fact) => TextSection(fact.title, fact.text),
         )
         .toList();
+  }
+
+  getLocationDetails(int locationId) async {
+    location = await Location.fetchById(locationId);
+
+    if (mounted)
+      setState(() {
+        this.location = location;
+      });
   }
 }

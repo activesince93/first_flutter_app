@@ -16,10 +16,18 @@ class ImageBanner extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey
       ),
-      child: Image.asset(
-          imagePath,
-        fit: BoxFit.cover,
-      ),
+      child: _bannerImage(),
     );
+  }
+
+  Widget _bannerImage() {
+    Image image;
+    if(imagePath != null && imagePath.isNotEmpty) {
+      return Image.network(
+        imagePath,
+        fit: BoxFit.cover,
+      );
+    }
+    return image;
   }
 }

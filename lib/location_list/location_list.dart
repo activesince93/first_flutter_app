@@ -5,11 +5,27 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 
-class LocationList extends StatelessWidget {
+class LocationList extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _LocationListState();
+  }
+}
+
+class _LocationListState extends State<LocationList> {
+
+  List<Location> locations = [];
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    loadData();
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Location> locations = Location.fetchAll();
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Locations'),
@@ -22,6 +38,13 @@ class LocationList extends StatelessWidget {
             ),
       ),
     );
+  }
+
+  loadData() async {
+    final locations = await Location.fetchAll();
+    setState(() {
+      this.locations = locations;
+    });
   }
 
   _onLocationTap(BuildContext context, int locationId) {
@@ -39,7 +62,7 @@ class LocationList extends StatelessWidget {
         height: 245.0,
         child: Stack(
           children: [
-            ImageBanner(imagePath: location.imagePath, height: 245.0),
+            ImageBanner(imagePath: location.url, height: 245.0),
             TileOverlay(location),
           ],
         ),
