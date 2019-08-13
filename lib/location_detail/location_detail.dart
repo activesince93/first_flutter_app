@@ -6,9 +6,9 @@ import 'package:first_flutter_app/widgets/text_section.dart';
 import 'package:first_flutter_app/widgets/image_banner.dart';
 
 class LocationDetail extends StatefulWidget {
-  final int locationId = 0;
+  int locationId = 0;
 
-  LocationDetail(locationId);
+  LocationDetail(this.locationId);
 
   @override
   State<StatefulWidget> createState() {

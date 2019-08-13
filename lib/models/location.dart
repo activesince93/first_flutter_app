@@ -53,7 +53,7 @@ class Location {
   }
 
   static Future<Location> fetchById(int id) async {
-    var uri = EndPoint.uri('/locations/$id');
+    var uri = EndPoint.uri('/locations/${id.toString()}');
     final resp = await http.get(uri.toString());
 
     if(resp.statusCode != 200) {
